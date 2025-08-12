@@ -1,6 +1,7 @@
 # Aero_Calc_App
 
-![App Banner](./assets/icon.png=320x320)
+![App Icon]
+<img src='./assets/icon.png' width='250' alt='App Icon'>
 
 # 📱 Aero Calc
 This app provides a user-friendly GATE calculator and scientific calculator designed to simplify complex calculations, with a special focus on aerospace engineering and advanced science applications.
@@ -48,8 +49,8 @@ This app provides a user-friendly GATE calculator and scientific calculator desi
 ---
 ## 📥 App Link
 
-      [AERO CALC APP](https://play.google.com/store/apps/details?id=com.mugiwara.jarvis&reviewId=0)
-          <span class="icon">⭐</span>
-          Rate AERO CALC
-          <span>Play Store — Leave a review</span>
+[AERO CALC APP](https://play.google.com/store/apps/details?id=com.mugiwara.jarvis&reviewId=0)
+      <span class="icon">⭐</span>
+      Rate AERO CALC
+      <span>Play Store — Leave a review</span>
     
