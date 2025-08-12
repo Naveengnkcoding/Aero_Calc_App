@@ -1,0 +1,257 @@
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>Contact — Developer</title>
+  <style>
+    *{
+        box-sizing: border-box;
+    }
+    /* Mobile-first single-file developer contact page with inline styles */
+    :root{--bg:#0f1724;--card:#0b1220;--accent:#06b6d4;--muted:#9aa4b2;--white:#e6eef6}
+    html,body{height:100%;margin:0;padding:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial; background:linear-gradient(180deg,#ffffff 0%, #ececed 100%);color:var(--white);-webkit-text-size-adjust:none}
+    .wrap{max-width:420px;padding:10px;box-sizing:border-box}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border:1px solid rgba(255,255,255,0.03);padding:16px;border-radius:14px;box-shadow:0 6px 18px rgba(2,6,23,0.6)}
+    .head{display:flex;block;align-items:center;border-radius:14px;background:linear-gradient(135deg,var(--accent),#7c3aed);font-weight:700;font-size:22px}
+    .avatar{width: 70%;height: 64px; display: flex; align-items: center;justify-content: center;}
+    .title{width: 30%;display: flex; align-items: center;justify-content: center;}
+    .title h1{margin:0;font-size:18px}
+    .title p{margin:2px 0 0;font-size:13px;color:var(--muted)}
+
+    .badge{display:inline-block;margin-top:10px;padding:6px 10px;border-radius:999px;background:rgba(255,255,255,0.03);font-size:12px;color:var(--muted)}
+
+    .bio{margin-top:14px;font-size:14px;color:var(--white);opacity:0.95}
+    .skills{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+    .chip{background:rgba(255,255,255,0.03);padding:6px 8px;border-radius:10px;font-size:12px;color:var(--muted)}
+
+    .contact{margin-top:14px;display:grid;gap:10px}
+    .btn{display:flex;align-items:center;gap:10px;padding:12px;border-radius:12px;text-decoration:none;color:var(--white);background:linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border:1px solid rgba(255,255,255,0.03);font-size:15px}
+    .btn:active{transform:translateY(1px)}
+    .btn .icon{width:18px;height:18px;display:inline-block}
+
+    .primary{background:linear-gradient(90deg,var(--accent),#7c3aed);color:#022; font-weight:600}
+    .small{font-size:12px;color:var(--muted)}
+
+    footer{
+            bottom: 0;
+            position: absolute;
+            
+            border-top: 1px dotted grey;
+            padding: 20px;margin-top:14px;text-align:center;font-size:12px;color:#9aa4b2;
+            margin-top:14px;text-align:center;font-size:12px;color:var(--muted)}
+
+    /* accessibility / spacing for mobile tap targets */
+    a.btn{touch-action:manipulation}
+
+    /* simple responsive: center and full width on small screens */
+    @media (max-width:420px){.wrap{padding:14px}}
+    #bock{
+			text-decoration: none;
+			font-weight: bold;
+			font-size: 15px;
+			color: rgb(6, 58, 130);
+			padding: 8px;
+			border-radius: 6px;
+			background-color: white;
+            display: inline-block;
+            float: right;
+            justify-content: right;
+            border: 1px solid white;
+            
+		}
+        .init{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            padding: 10px;
+            padding-top: 5vh;
+            text-align:center;
+        }
+        .init select{
+            width: auto;
+            height: 3vh;
+            color:orange;
+            font-size: 23px;
+            font-weight: bold;
+            background-color: transparent;
+            border: none;
+        }
+        .output{
+            display: inline-block;
+            width: 100%;
+            padding: 10px;
+        }
+        .status{
+            color: grey;
+            text-align: center;
+            font-weight : bold;
+            font-size: large;
+            padding: 10px;
+            opacity: 0.3;
+            margin-bottom: 5vh;
+        }
+        .inleft{
+            display: block;
+            float: left;
+            width: 50%;
+            height: 30vh;
+            padding-right: 10vw;
+        }
+        .inleft input{
+            color: orange;
+            font-size: xx-large;
+            width: 100%;
+            background: none;
+            border: none;
+            text-align: right;
+            padding: 10px;
+            float: right;
+        }
+        textarea:focus, input:focus, select:focus{
+            outline: none;
+        }
+        .inleft select{
+            width: 100%;
+            height: 4vh;
+            text-align: right;
+            color: orange;
+            font-size: large;
+            background-color: transparent; 
+            border: none;
+        }
+        #unitlist{
+
+        }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="car">
+      <div class="head">
+        <div class="avatar" aria-hidden="true">Unit Conversion</div>
+        <div class="title"><a id="bock" href="./index.html">Return</a></div>
+      </div>
+      <!-- Starting content -->
+        <div class="init">
+          <select id="prop">
+            <option value="L">Lenth</option>
+            <option value="M">Mass</option>
+            <option value="vol">Volume</option>
+            <option value="pre">Pressure</option>
+            <option value="den">Density</option>
+            <option value="temp">Temperature</option>
+            <option value="vel">velocity</option>
+            
+        </select>
+        </div>
+
+        <div class="output">
+            <div class="status"> Unit    To   Unit</div>
+            <div class="inleft">
+                <input type="number" id="1unit" value="1">
+                <br>
+                <select class="list" id="unitlist">
+                    <option value="mm" data-category="L">mm</option>
+                    <option value="cm" data-category="L">cm</option>
+                    <option value="m" data-category="L">m</option>
+                    <option value="km" data-category="L">km</option>
+                    <option value="km" data-category="L">Foot</option>
+                    <option value="km" data-category="L">Mile</option>
+                    <option value="mg" data-category="M">mg</option>
+                    <option value="g" data-category="M">g</option>
+                    <option value="kg" data-category="M">Kg</option>    
+                    <option value="ton" data-category="M">Ton</option>
+                    <option value="vol" data-category="vol">mm3</option>
+                    <option value="vol" data-category="vol">cm3</option>
+                    <option value="vol" data-category="vol">m3</option>
+                    <option value="vol" data-category="vol">L</option>
+                    <option value="si" data-category="pre">Pa</option>
+                    <option value="si" data-category="pre">Bar</option>
+                    <option value="si" data-category="pre">atm</option>
+                    <option value="si" data-category="pre">N/m2</option>
+                    <option value="si" data-category="pre">mBar</option>
+                    <option value="den" data-category="den">kg/m3</option>
+                    <option value="den" data-category="den">g/m3</option>
+                    <option value="den" data-category="den">kg/cm3</option>
+                    <option value="den" data-category="den">g/cm3</option>
+                    <option value="den" data-category="den">kg/L</option>
+                    <option value="den" data-category="den">g/L</option>
+                    <option value="den" data-category="den">g/mL</option>
+                    <option value="temp" data-category="temp">K</option>
+                    <option value="temp" data-category="temp">C</option>
+                    <option value="temp" data-category="temp">F</option>
+                    <option value="vel" data-category="vel">cm/s</option>
+                    <option value="vel" data-category="vel">m/s</option>                    
+                    <option value="vel" data-category="vel">km/hr</option>
+                    <option value="vel" data-category="vel">Knot</option>
+                    <option value="vel" data-category="vel">Mile/hr</option>
+                    <option value="vel" data-category="vel">Foot/s</option>
+                </select>
+            </div>
+            <div class="inleft right">
+                <input type="number" id="" value="1">
+                <br>
+                <select id="unitlist2">
+                    <option value="option1">Km</option>
+                </select>
+            </div>
+        </div>
+        
+        </div>
+        <!-- Ending Content -->
+      <footer>
+        <div style="margin-bottom:6px">Prefered contact: <strong>Email</strong></div>
+        <div class="small">Please include a short reproducible description for bugs and App version if known.</div>
+      </footer>
+    </div>
+  </div>
+
+  <script>
+   
+    const categorySelect = document.getElementById('prop');
+    const itemSelect = document.getElementById('unitlist');
+    const itemSelect2 = document.getElementById('unitlist2');
+    const allOptions = [...itemSelect.options]; // Store all original options
+    
+    ////Loading 
+    window.onload = function() {
+        var input = document.getElementById("1unit").focus();
+        sortunit();
+    }
+
+    /////ad Event Liteners
+  categorySelect.addEventListener('change', function() {
+    const selectedCategory = this.value;
+    
+    // Clear current options
+    itemSelect.innerHTML = '';
+    itemSelect2.innerHTML = '';
+    // Add back only matching options
+    allOptions.forEach(option => {
+      if (option.value === "" || option.dataset.category === selectedCategory) {
+        var opt = option;
+        itemSelect.appendChild(option);
+        itemSelect2.appendChild(option.cloneNode(true));
+      }
+    });
+  });
+
+  ////// 
+  function sortunit(){
+    itemSelect.innerHTML = '';
+    itemSelect2.innerHTML = '';
+    // Add back only matching options
+    const selectedCategory = document.getElementById('prop').value;
+    allOptions.forEach(option => {
+      if (option.value === "" || option.dataset.category === selectedCategory) {
+        var opt = option;
+        itemSelect.appendChild(option);
+        itemSelect2.appendChild(option.cloneNode(true));
+      }
+    });
+    }
+
+  </script>
+</body>
+</html>

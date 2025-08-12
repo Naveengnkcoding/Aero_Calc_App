@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+	<meta http-equiv="ScreenOrientation" content="autoRotate:disabled">
+    <meta charset="UTF-8">
+    <title>Aerospace Engineering Syllabus</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+        body{
+            font-family: 'Times New Roman';
+        }
+        .content{
+            padding-top: 10vh;
+            font-size: 20px;
+            text-align: center;
+        }
+        .hd{
+            color: white;
+            background-color: #4286f3;
+            font-weight: bold;
+            height: 8vh;
+            display: flex;
+            align-items: center;
+            font-size: 24px;
+            position: fixed;
+            width: 100vw;
+            padding: 18px;
+        }
+        .hd h4{
+            width: 80vw;
+        }
+        p{
+            font-size: 17px;
+        }
+        h2{
+            margin-top: 18px;
+            margin-bottom: 18px;
+           color: black;
+        }
+        #bock{
+			text-decoration: none;
+			font-weight: bold;
+			font-size: 15px;
+			color: white;
+			padding: 8px;
+			border-radius: 3px;
+			background-color: #4286f3;
+            display: inline-block;
+            float: right;
+            border: 1px solid white;
+            
+		}
+        .inbox{
+            color: black;
+            background-color: lightgrey;
+            border-radius: 5px;
+            font-weight: bold;
+            text-align: center;
+            padding: 15px;
+            font-size: large;
+            width: 65vw;
+            border: none;
+            margin: 10px;
+            margin-bottom: 12px;
+        }
+        .results{
+            width: 80vw;
+            background-color: rgb(241, 239, 241);
+            height: auto;
+            font-weight: bold;
+            border-radius: 10px;
+            display: none;
+            padding: 10px;
+            margin: 20px;
+        }
+        #cbtn{
+            width: 150px;
+            height: 6vh;
+            font-size: large;
+            font-weight: bold;
+            color: white;
+            background-color: grey;
+            max-height: 50px;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 1px 2px 10px grey;
+            border: none;
+        }
+        #cbtn:hover{
+            color: ;
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+<div class="hd">
+    <h4>Earth's Atmosphere</h4><a id="bock" href="./index.html">Return</a>
+</div>
+    <div id="content" class="content" style="display:noe;">
+        <h3>Atmospheric Properties at Altitude</h3><br>
+        <!-- <h2>Altitude</h2> -->
+        <label for="altitudeInput">Enter Heigh(H) in meter</label>
+        <input class="inbox" type="number" id="altitudeInput" placeholder="e.g. 15000m"/>
+        <br>
+    <button id="cbtn" onclick="computeAndShow()">Compute</button>
+         <center><div id="output" class="results">
+       <!-- Result shodcdcdc ere html -->
+        </div></center>
+        <center>
+        <img id="img" src="./SCIENTIFIC CALCULATOR_files/atm_layer.jpg" style="border: 1px solid grey;margin-top:4vh;block; width:70vw;height:auto; margin-bottom: 2vh;">
+        </center>
+        <p><strong>Important Note:</strong>The main features of the ISA are the standard sea level values and the
+            variation of temperature with altitude. The air is assumed as dry perfect gas.<br>
+            The standard sea level conditions are as follows:<br>
+            Temperature (T<sub>&deg;</sub>) = 288.15 K = 150C<br>
+            Pressure (P<sub>&deg;</sub>) = 101325 N/m2 = 760 mm of Hg </p>
+            <p>Following values / expressions have been used while preparing <br> ISA table. R=287.05287 and  g= 9.80665m/s.
+            <br><br>
+        <a onclick="formula()"style="color: blue;">How This Calculated? Formulae?</a><br><br>
+    </div>
+    
+    <div id="formula" style="padding: 20px; padding-top: 10vh; text-align: center; display:none">
+        <center>
+            <a href="" style="background-color: green; color: white; font-weight: bold; width: 40vw;display:block; padding: 10px; text-decoration: none;">Back</a>
+        <img id="forimg" src="./SCIENTIFIC CALCULATOR_files/formula.jpg" style="border: 1px solid grey;  margin-top:5vh; margin-bottom:5vh; display:block; width:80vw;height:auto;" >
+        </center>
+        <p><strong>Important Note:</strong>The main features of the ISA are the standard sea level values and the
+            variation of temperature with altitude. The air is assumed as dry perfect gas.<br>
+            The standard sea level conditions are as follows:<br>
+            Temperature (T<sub>&deg;</sub>) = 288.15 K = 150C<br>
+            Pressure (P<sub>&deg;</sub>) = 101325 N/m2 = 760 mm of Hg </p>
+            <p>Following values / expressions have been used while preparing <br> ISA table. R=287.05287 and  g= 9.80665m/s.
+            <br><br>
+    </div>
+    <script>
+        function calculateAtmosphericProperties(h) {
+  let T, p, rho;
+
+  if (h >= 0 && h <= 11000) { // Troposphere
+    // Temperature (K)
+    T = 288.15 - 0.0065 * h;
+    // Pressure (Pa)
+    p = 101325 * Math.pow(1 - 0.000022588 * h, 5.25588);
+    // Density (kg/m^3)
+    rho = 1.225 * Math.pow(1 - 0.000022588 * h, 4.25588);
+  } else if (h > 11000 && h <= 20000) { // Lower Stratosphere
+    T = 216.65;
+    p = 22632 * Math.exp(-0.000157688 * (h - 11000));
+    rho = 0.36391 * Math.exp(-0.000157688 * (h - 11000));
+  } else if (h > 20000 && h <= 32000) { // Middle Stratosphere
+    T = 216.65 + 0.001 * (h - 20000);
+    p = 5474.9 * Math.pow(1 + 0.000004616 * (h - 20000), -34.1632);
+    rho = 0.08803 * Math.pow(1 + 0.000004616 * (h - 20000), -35.1632);
+  } else {
+    return {
+      message: 'Altitude out of valid range (0–32000 m)'
+    };
+  }
+
+  return {T, p, rho,h};
+}
+
+// Example to use with HTML input box and output divs
+function computeAndShow() {
+  const h = parseFloat(document.getElementById('altitudeInput').value);
+  const result = calculateAtmosphericProperties(h);
+
+  if (result.message) {
+    document.getElementById('output').innerHTML = result.message;
+  } else {
+    document.getElementById('img').style.display = 'none';
+    document.getElementById('output').style.display = 'block';
+    document.getElementById('output').innerHTML = 
+      '<br>Temperature: ' + result.T.toFixed(2) + ' K<br><br><br>' +
+      'Pressure: ' + result.p.toFixed(2) + ' Pa<br><br><br>' +
+      'Density: ' + result.rho.toFixed(4) + ' kg/m<sup>3</sup><br><br>';
+  }
+}
+function formula(){
+    document.getElementById('content').style.display = 'none';
+    document.getElementById('formula').style.display = 'block';
+}
+    </script>
+</body>
+</html>

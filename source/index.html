@@ -1,0 +1,168 @@
+<html>
+    <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="mobile-web-app-capable" content="yes" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+	<meta http-equiv="ScreenOrientation" content="autoRotate:disabled">
+
+	<title>AERO CALC</title>
+	<style>
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+
+        }
+        body{
+            font-family: Arial;
+            text-align: center;
+        }
+        .home{
+            width: 100%;
+            height:40vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background:radial-gradient(rgb(25, 164, 185) -60%, rgb(255, 255, 255) 50%, rgb(244, 250, 252) 100%);
+        }
+        a{
+            text-decoration: none;
+            display: block;
+        }
+        #calc{
+            border-radius: 50%;
+            width: 40vw;
+            height: 40vw;
+            max-width: 35vh;
+            max-height: 35vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background-color: #4286f3;
+            padding: 10px;
+            font-size: 16px;
+        }
+        .bottom{
+            border-radius: 15px 15px 0 0;
+            box-shadow: 0 -5px 10px rgba(168, 180, 182, 0.2);
+            height: 50vh;
+            padding-top: 5vh;
+        }
+        
+        .btn{
+            width: 60vw;
+            display: block;
+            color: white;
+            background-color: blue;
+            padding: 10px;
+            margin-bottom: 3vh;
+        }
+        .grid-container {   
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); /* Two columns, each taking equal space */
+            grid-template-rows: repeat(2, 1fr); /* Two rows, height adjusts to content */
+            gap: 5vw; /* Space between grid items */
+            padding: 20px; /* Limit container width for better readability */
+            margin: 0 auto; /* Center the container */
+        }
+
+        .card {
+            width: 40vw;;
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .card a{
+            color: blue;    
+            font-size: 10px;
+        }
+        .card h4 {
+            margin-top: 0;
+            font-size: medium;
+            color: black;
+        }
+
+        .card p {
+            color: #666;
+        }
+        .card:hover {
+            background-color: white;
+            box-shadow: none;
+        }
+        footer{ display: block;
+            width: 100vw;
+            bottom: 0;
+            position: absolute;
+            border-top: 1px dotted grey;
+            padding: 20px;margin-top:14px;text-align:center;font-size:12px;color:#9aa4b2;}
+        .small{font-size:12px;color:#9aa4b2;}
+    </style>	 
+    
+    </head>
+    <body>
+        <div class="content">
+        <center>
+            <div class="home" style="">
+                <center>
+                <a id="calc" style="font-weight:bold;  color: white;" href="./SCIENTIFIC CALCULATOR.html">GATE CALCULATOR</a>
+                </center>
+            </div>
+            <div class="bottom">
+                <div class="btn"><a style=" font-weight:bold; color: white;" href="./aerospace.html">Aerospace Engineering</a></div>
+                <div class="grid-container">
+                <div onclick="direct(2)" class="card" >
+                    <h4>Aero Conversion</h4>
+                </div>
+                <div onclick="direct(4)" class="card" >
+                    <h4>Compressible Flow</h4>
+                </div>
+                <div onclick="direct(6)" class="card" >
+                    <h4>CFD</h4>
+                </div>
+                <div onclick="direct(1)" class="card">
+                    <h4>Atmosphere</h4>
+                </div>
+            </div>
+            
+            <div class="">
+
+            </div>
+            <footer>
+                <div style="margin-bottom:6px" onclick=" direct(5)">Prefered contact: <strong>Email</strong></div>
+                <div class="small"><a>Navgosoft | Contact Developer</a></div>
+            </footer>
+        </div>
+        </center>
+        </div>
+        <script>
+            var a = 0;
+            var b = 0;
+            function direct(a){
+                if(a == 1){
+                    location.href="atm.html";
+                }
+                if(a == 2){
+                    location.href="cona.html";
+                }
+                if(a == 3){
+                    location.href="aerospace.html";
+                }
+                if(a == 4 ){
+                    location.href="flow.html";
+                }
+                if(a == 5){
+                    location.href="dev.html";
+                }
+                if(a == 6){
+                    location.href="cfd.html";
+                }
+            }
+        </script>
+    </body>
+</html>

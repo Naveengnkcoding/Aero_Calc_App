@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>Contact — Developer</title>
+  <style>
+    /* Mobile-first single-file developer contact page with inline styles */
+    :root{--bg:#0f1724;--card:#0b1220;--accent:#06b6d4;--muted:#9aa4b2;--white:#e6eef6}
+    html,body{height:100%;margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial; background:linear-gradient(180deg,#071025 0%, #061225 100%);color:var(--white);-webkit-text-size-adjust:none}
+    .wrap{max-width:420px;margin:14px auto;padding:18px;box-sizing:border-box}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border:1px solid rgba(255,255,255,0.03);padding:16px;border-radius:14px;box-shadow:0 6px 18px rgba(2,6,23,0.6)}
+    .head{display:flex;gap:12px;align-items:center}
+    .avatar{flex:0 0 64px;height:64px;width:64px;border-radius:14px;display:grid;place-items:center;background:linear-gradient(135deg,var(--accent),#7c3aed);font-weight:700;font-size:22px}
+    .title{line-height:1}
+    .title h1{margin:0;font-size:18px}
+    .title p{margin:2px 0 0;font-size:13px;color:var(--muted)}
+
+    .badge{display:inline-block;margin-top:10px;padding:6px 10px;border-radius:999px;background:rgba(255,255,255,0.03);font-size:12px;color:var(--muted)}
+
+    .bio{margin-top:14px;font-size:14px;color:var(--white);opacity:0.95}
+    .skills{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+    .chip{background:rgba(255,255,255,0.03);padding:6px 8px;border-radius:10px;font-size:12px;color:var(--muted)}
+
+    .contact{margin-top:14px;display:grid;gap:10px}
+    .btn{display:flex;align-items:center;gap:10px;padding:12px;border-radius:12px;text-decoration:none;color:var(--white);background:linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border:1px solid rgba(255,255,255,0.03);font-size:15px}
+    .btn:active{transform:translateY(1px)}
+    .btn .icon{width:18px;height:18px;display:inline-block}
+
+    .primary{background:linear-gradient(90deg,var(--accent),#7c3aed);color:#022; font-weight:600}
+    .secondary{background:linear-gradient(90deg,#d4d4dd,#c6c4cb);color:#022; font-weight:600}
+    .small{font-size:12px;color:var(--muted)}
+
+    footer{margin-top:14px;text-align:center;font-size:12px;color:var(--muted)}
+
+    /* accessibility / spacing for mobile tap targets */
+    a.btn{touch-action:manipulation}
+
+    /* simple responsive: center and full width on small screens */
+    @media (max-width:420px){.wrap{padding:14px}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="card">
+      <div class="head">
+        <div class="avatar" aria-hidden="true">NK</div>
+        <div class="title">
+          <h1>Naveen Kumar</h1>
+          <p class="small">Aeronautical Engineer • Mobile App & Tools </p>
+          <div class="badge">Developer of: <strong class="small">AERO GATE CALC</strong></div>
+        </div>
+      </div>
+
+      <p class="bio">Hi- This App was build lightweight, reliable Converteror calculator for Aeronautical society, aerospace students and engineers. Send Email for bug reports, feature requests, integrations.</p>
+
+      <div class="contact">
+        <!-- Phone📞 -->
+        <a class="btn"  id="callBtn">
+          <span class="icon">📍</span>
+          <div style="flex:1;text-align:left">Location<br><span class="small">Tamil Nadu, INDIA</span></div>
+        </a>
+
+        <!-- Email -->
+        <a class="btn" href="mailto:navgosoft@gmail.com?subject= Aero%20Calc%20App%20Support%20%2F%20Feature%20Request" id="emailBtn">
+          <span class="icon">✉️</span>
+          <div style="flex:1;text-align:left">Email<br><span class="small">navgosoft@gmail.com</span></div>
+        </a>
+        <a class="btn" href="mailto:mugiwaratechnogies@gmail.com?subject= Aero%20Calc%20App%20Support%20%2F%20Feature%20Request" id="emailBtn">
+          <span class="icon">✉️</span>
+          <div style="flex:1;text-align:left">Mugiwara Tech | Navgosoft<br><span class="small">mugiwaratechnogies@gmail.com</span></div>
+        </a>
+
+        <!-- GitHub -->
+        <a class="btn" href="https://github.com/naveengnkcoding" target="_blank" rel="noopener noreferrer">
+          <span class="icon">💻</span>
+          <div style="flex:1;text-align:left">GitHub<br><span class="small">github.com/naveengnkcoding</span></div>
+        </a>
+
+        <!-- Rate Us App link -->
+        <a class="btn primary" href="https://play.google.com/store/apps/details?id=com.mugiwara.jarvis&reviewId=0" target="_blank" rel="noopener noreferrer">
+          <span class="icon">⭐</span>
+          <div style="flex:1;text-align:left;">Rate AERO CALC<br><span class="small">Play Store — Leave a review</span></div>
+        </a>
+        <a class="btn secondary" href="./index.html">
+          <div style="flex:1;text-align:center;color:red;font-size: large;">EXIT&nbsp;&nbsp;↩️<br></div>
+        </a>
+
+        <!-- Portfolio / App link
+        <a class="btn primary" href="https://play.google.com/store/apps/details?id=your.app.id" target="_blank" rel="noopener noreferrer">
+          <span class="icon">⬇️</span>
+          <div style="flex:1;text-align:left">Open App<br><span class="small">Play Store / App Page</span></div>
+        </a> -->
+
+        <!-- Quick copy buttons row -->
+        <div style="display:flex;gap:8px">
+          <button class="btn" id="copyEmail" style="flex:1">Copy Email</button>
+          
+        </div>
+      </div>
+
+      <footer>
+        <div style="margin-bottom:6px">Prefered contact: <strong>Email</strong></div>
+        <div class="small">Please include a short reproducible description for bugs and App version if known.</div>
+      </footer>
+    </div>
+  </div>
+
+  <script>
+    // Small helpers: copy contact details to clipboard with user feedback
+    function copyText(text, el){
+      navigator.clipboard?.writeText(text).then(()=>{
+        var old = el.innerText;
+        el.innerText = 'Copied!';
+        setTimeout(()=> el.innerText = old,1200);
+      }).catch(()=>{
+        alert('Copy failed — please long-press to copy on mobile.');
+      });
+    }
+
+    document.getElementById('copyEmail').addEventListener('click',function(){ copyText('navgosoft@gmail.com', this); });
+
+    // Prevent double-tap zoom on older browsers (extra precaution)
+    let lastTouch = 0;
+    window.addEventListener('touchend', function(e){
+      const t = Date.now();
+      if(t - lastTouch <= 300) e.preventDefault();
+      lastTouch = t;
+    }, {passive:false});
+  </script>
+</body>
+</html>
