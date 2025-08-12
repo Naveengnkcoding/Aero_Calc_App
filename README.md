@@ -1,15 +1,13 @@
 # Aero_Calc_App
 
 ![App Icon]
-<img src='./assets/icon.png' width='250' alt='App Icon'>
+<img src='./assets/icon.png' width='125' alt='App Icon'>  | #📱 Aero Calc
 
-# 📱 Aero Calc
-This app provides a user-friendly GATE calculator and scientific calculator designed to simplify complex calculations, with a special focus on aerospace engineering and advanced science applications.
-
+This app provides a user-friendly GATE calculator and scientific calculator designed to simplify complex calculations, with a special focus on  aerospace engineering and advanced science applications.
 
 
 ## 🚀 ABOUT AERO_CALC_API
-**Aero Calc Gate**  To perform all Basic,standard calculation using This All in One *AERO_CALC_API*.
+**Aero Calc Gate**  Powered by AERO_CALC_API to perform all Basic,standard calculation using This All in One *AERO_CALC_API*.
 
 ---
 
@@ -44,13 +42,13 @@ This app provides a user-friendly GATE calculator and scientific calculator desi
       toP2-p1()
 
 ```
----
-      <iframe src="./source/atm.html" width="800" height="500" />
----
+--
+    <iframe src="./source/atm.html" width="800" height="500" />
+--
 ## 📥 App Link
 
 [AERO CALC APP](https://play.google.com/store/apps/details?id=com.mugiwara.jarvis&reviewId=0)
-      <span class="icon">⭐</span>
+    <span class="icon">⭐</span>
       Rate AERO CALC
       <span>Play Store — Leave a review</span>
     
