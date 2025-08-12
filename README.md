@@ -1,21 +1,22 @@
 # Aero_Calc_App
-This app provides a user-friendly GATE calculator and scientific calculator designed to simplify complex calculations, with a special focus on aerospace engineering and advanced science applications.
+
+![App Banner](./assets/icon.png=320x320)
 
 # 📱 Aero Calc
+This app provides a user-friendly GATE calculator and scientific calculator designed to simplify complex calculations, with a special focus on aerospace engineering and advanced science applications.
 
-![App Banner](./assets/icon.png) <!-- Replace with your banner image -->
 
-## 🚀 Overview
-**Aero Calc Gate** is a [short description: e.g., "scientific calculator designed for aerospace engineering students"].  
-It aims to [ app's purpose: e.g., "simplify calculations, conversions, and essential engineering formulas in one place"].
+
+## 🚀 ABOUT AERO_CALC_API
+**Aero Calc Gate**  To perform all Basic,standard calculation using This All in One *AERO_CALC_API*.
 
 ---
 
 ## ✨ Features
-- 📊 **Feature 1** – Unit Conversion  
-- ⚡ **Feature 2** – Compressible Flow Equations 
-- 🔒 **Feature 3** – Atmosphere Calculations
-- 🌐 **Feature 4** – Gate Calculator 
+-  **Feature 1** – Unit Conversion  
+-  **Feature 2** – Compressible Flow Equations 
+-  **Feature 3** – Atmosphere Calculations
+-  **Feature 4** – Gate Calculator 
 
 ---
 
@@ -32,10 +33,20 @@ It aims to [ app's purpose: e.g., "simplify calculations, conversions, and essen
 - **API** Developing OWN API, for Wide Range of Variety of Units Conversion scaling.
 
 ---
+### API DOCUMENTATION
+
+```
+calculateThrust(velocity,massflow)
+calculateAirMach(velocity,Temperature)
+tocgs()
+toSI()
+toP2-p1()
+
+```
 
 ## 📥 App Link
 
-<a  href="https://play.google.com/store/apps/details?id=com.mugiwara.jarvis&reviewId=0"target="_blank" rel="noopener noreferrer">
+<a  href="https://play.google.com/store/apps/details?id=com.mugiwara.jarvis&reviewId=0"target="_blank" rel="noopenernoreferrer">
           <span class="icon">⭐</span>
           <div style="flex:1;text-align:left;">Rate AERO CALC<br><span class="small">Play Store — Leave a review</span></div>
     </a>
