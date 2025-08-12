@@ -1,6 +1,6 @@
 # Aero_Calc_App
 
-<img src='./assets/icon.png' width='100' alt='appicon'>
+<img src='./assets/icon.png' width='100' alt='apppicon'>
 
 # 📱 Aero Calc
 
