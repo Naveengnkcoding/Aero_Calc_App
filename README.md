@@ -23,7 +23,7 @@ This app provides a user-friendly GATE calculator and scientific calculator desi
 ## 🖼 Screenshots
 | Home Screen | Feature Screen | Settings |
 |-------------|---------------|----------|
-| ![Home](./assets/Banner0.jpg) | ![Feature](./assets/Banner3.jpg) | ![Atmosphere](./assets/Banner4.jpg) |
+| ![Home](./assets/Banner0.jpg) | ![Feature](./assets/Banner3.jpg) | ![Atmosphere](./assets/Banner4.png) |
 
 ---
 
@@ -31,22 +31,25 @@ This app provides a user-friendly GATE calculator and scientific calculator desi
 - **Frontend:** Android Studio / Java / Simple HTML-CSS-JS 
 - **Backend:** js / Gate Calc / json
 - **API** Developing OWN API, for Wide Range of Variety of Units Conversion scaling.
-
 ---
+
 ### API DOCUMENTATION
 
 ```
-calculateThrust(velocity,massflow)
-calculateAirMach(velocity,Temperature)
-tocgs()
-toSI()
-toP2-p1()
+      calculateThrust(velocity,massflow)
+      calculateAirMach(velocity,Temperature)
+      tocgs()
+      toSI()
+      toP2-p1()
 
 ```
-
+---
+      <iframe src="./source/atm.html" width="800" height="500" />
+---
 ## 📥 App Link
 
-<a  href="https://play.google.com/store/apps/details?id=com.mugiwara.jarvis&reviewId=0"target="_blank" rel="noopenernoreferrer">
+      [AERO CALC APP](https://play.google.com/store/apps/details?id=com.mugiwara.jarvis&reviewId=0)
           <span class="icon">⭐</span>
-          <div style="flex:1;text-align:left;">Rate AERO CALC<br><span class="small">Play Store — Leave a review</span></div>
-    </a>
+          Rate AERO CALC
+          <span>Play Store — Leave a review</span>
+    
