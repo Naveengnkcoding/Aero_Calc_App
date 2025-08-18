@@ -3,6 +3,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <title>Contact — Developer</title>
+	<script type="text/javascript" src="./calc_lib/aerocalc_query1.0_api.js"></script>      
   <style>
     *{
         box-sizing: border-box;
@@ -120,6 +121,11 @@
             background-color: transparent; 
             border: none;
         }
+        .bnum{
+          color: black;
+          font-weight: 500;
+          text-align: right;
+        }
         #unitlist{
 
         }
@@ -134,6 +140,7 @@
       </div>
       <!-- Starting content -->
         <div class="init">
+          Choose &nbsp;&nbsp;&nbsp;  
           <select id="prop">
             <option value="L">Lenth</option>
             <option value="M">Mass</option>
@@ -141,7 +148,7 @@
             <option value="pre">Pressure</option>
             <option value="den">Density</option>
             <option value="temp">Temperature</option>
-            <option value="vel">velocity</option>
+            <option value="vel">Velocity</option>
             
         </select>
         </div>
@@ -149,48 +156,50 @@
         <div class="output">
             <div class="status"> Unit    To   Unit</div>
             <div class="inleft">
-                <input type="number" id="1unit" value="1">
+                <input type="number" id="iunit" value="1">
+                <p class="bnum" id="inum">1</p>
                 <br>
                 <select class="list" id="unitlist">
                     <option value="mm" data-category="L">mm</option>
                     <option value="cm" data-category="L">cm</option>
                     <option value="m" data-category="L">m</option>
                     <option value="km" data-category="L">km</option>
-                    <option value="km" data-category="L">Foot</option>
-                    <option value="km" data-category="L">Mile</option>
+                    <option value="ft" data-category="L">Foot</option>
+                    <option value="mi" data-category="L">Mile</option>
                     <option value="mg" data-category="M">mg</option>
                     <option value="g" data-category="M">g</option>
                     <option value="kg" data-category="M">Kg</option>    
                     <option value="ton" data-category="M">Ton</option>
-                    <option value="vol" data-category="vol">mm3</option>
-                    <option value="vol" data-category="vol">cm3</option>
-                    <option value="vol" data-category="vol">m3</option>
-                    <option value="vol" data-category="vol">L</option>
-                    <option value="si" data-category="pre">Pa</option>
-                    <option value="si" data-category="pre">Bar</option>
-                    <option value="si" data-category="pre">atm</option>
-                    <option value="si" data-category="pre">N/m2</option>
-                    <option value="si" data-category="pre">mBar</option>
-                    <option value="den" data-category="den">kg/m3</option>
-                    <option value="den" data-category="den">g/m3</option>
-                    <option value="den" data-category="den">kg/cm3</option>
-                    <option value="den" data-category="den">g/cm3</option>
-                    <option value="den" data-category="den">kg/L</option>
-                    <option value="den" data-category="den">g/L</option>
-                    <option value="den" data-category="den">g/mL</option>
-                    <option value="temp" data-category="temp">K</option>
-                    <option value="temp" data-category="temp">C</option>
-                    <option value="temp" data-category="temp">F</option>
-                    <option value="vel" data-category="vel">cm/s</option>
-                    <option value="vel" data-category="vel">m/s</option>                    
-                    <option value="vel" data-category="vel">km/hr</option>
-                    <option value="vel" data-category="vel">Knot</option>
-                    <option value="vel" data-category="vel">Mile/hr</option>
-                    <option value="vel" data-category="vel">Foot/s</option>
+                    <option value="mm3" data-category="vol">mm3</option>
+                    <option value="ccc" data-category="vol">cm3</option>
+                    <option value="mmm" data-category="vol">m3</option>
+                    <option value="l" data-category="vol">L</option>
+                    <option value="pa" data-category="pre">Pa</option>
+                    <option value="bar" data-category="pre">Bar</option>
+                    <option value="atm" data-category="pre">atm</option>
+                    <option value="nm2" data-category="pre">N/m2</option>
+                    <option value="mbar" data-category="pre">mBar</option>
+                    <option value="kgm3" data-category="den">kg/m3</option>
+                    <option value="gm3" data-category="den">g/m3</option>
+                    <option value="kcm3" data-category="den">kg/cm3</option>
+                    <option value="gcm3" data-category="den">g/cm3</option>
+                    <option value="kgl" data-category="den">kg/L</option>
+                    <option value="gl" data-category="den">g/L</option>
+                    <option value="gml" data-category="den">g/mL</option>
+                    <option value="k" data-category="temp">K</option>
+                    <option value="c" data-category="temp">C</option>
+                    <option value="f" data-category="temp">F</option>
+                    <option value="cmps" data-category="vel">cm/s</option>
+                    <option value="mps" data-category="vel">m/s</option>                    
+                    <option value="kmph" data-category="vel">km/hr</option>
+                    <option value="knot" data-category="vel">Knot</option>
+                    <option value="milph" data-category="vel">Mile/hr</option>
+                    <option value="ftps" data-category="vel">Foot/s</option>
                 </select>
             </div>
             <div class="inleft right">
-                <input type="number" id="" value="1">
+                <input type="number" id="ounit" value="1" disabled>
+                <p class="bnum" id="onum">0</p>
                 <br>
                 <select id="unitlist2">
                     <option value="option1">Km</option>
@@ -216,9 +225,34 @@
     
     ////Loading 
     window.onload = function() {
-        var input = document.getElementById("1unit").focus();
+        var input = document.getElementById("iunit").focus();
         sortunit();
     }
+
+    /// Get input and Update small text below
+    const inunit = document.getElementById('iunit');
+    inunit.addEventListener('input', function() {
+    const inum = this.value;
+    // get and Clear current options
+    const getsmall = document.getElementById('inum');
+    getsmall.innerHTML = '0 ';
+    if(inum){
+      getsmall.innerHTML = inum;
+    }
+    unitcalc(this.value);
+    });
+
+    /// onchange update for select 
+    const unitgot = document.getElementById('unitlist');
+    const unitout = document.getElementById('unitlist2');
+    unitgot.addEventListener('change', function() {
+      unitcalc(1);
+    });
+    unitout.addEventListener('change', function() {
+      unitcalc(1);
+    });
+
+
 
     /////ad Event Liteners
   categorySelect.addEventListener('change', function() {
@@ -250,6 +284,45 @@
         itemSelect2.appendChild(option.cloneNode(true));
       }
     });
+    }
+    function unitcalc(){
+      var output = 0;
+      ///Fetch all Parameter
+      getinput = document.getElementById('iunit').value; 
+      getprop = document.getElementById('prop').value;
+      getunitgot = document.getElementById('unitlist').value;
+      getunitout = document.getElementById('unitlist2').value;
+      
+      switch (getprop) {
+          case "L":
+               output = len(getunitgot,getunitout, getinput);
+            break;
+          case 'M':
+                output = mass(getunitgot,getunitout, getinput);
+            break;
+          case 'vol':
+                output = vol(getunitgot,getunitout, getinput);
+            break;
+          case 'pre':
+                output = pre(getunitgot,getunitout, getinput);
+            break;
+          case 'den':
+                output = den(getunitgot,getunitout, getinput);
+            break;
+          case 'temp':
+                output = temp(getunitgot,getunitout, getinput);
+            break;
+          case 'vel':
+                output = vel(getunitgot,getunitout, getinput);
+            break;
+        }
+
+      ///Func Output update
+      const ounit = document.getElementById('ounit');
+      // get and Clear current options
+      const osmall = document.getElementById('onum');
+      ounit.value = output;
+      osmall.innerHTML = output;
     }
 
   </script>
